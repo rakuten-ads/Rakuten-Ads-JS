@@ -497,16 +497,24 @@ export default {
 
 ## Carousel Mode
 
-RUNA provides carousel advertising. If ads you defined are in the wrapper the id of which is specified in `displayInCarousel()`, they would be showed carousel ads.
+RUNA provides carousel advertising. If ads you defined are in the wrapper the id of which is specified in `displayInCarousel()`, they would be shown carousel ads.
 Because This feature is an extension of Single Request, You need to put `enableSingleRequest()` to every Ad definitions.
 
 ### options
 
-You can custom some appearances with the secound argument in `displayInCarousel()`.
+You can customize some appearances and behaviors with object as the secound argument in `displayInCarousel()`.
 
-- width ･･･ the size of carousel(px), a default size is '100%'
-- interval ･･･ intervals between ads(px), a default is '0px'
-- nextMinWidth ･･･ If an only one Ad will be showed in the carousel, JS SDK resize Ads to show two Ads at least. You can specify the width of a part of a second Ad to be showed with `nextMinWidth` (px). a default is 10% of Ad width.
+| Name             | Type              | Default | Description                                                                                                                                                                                                                                                                                                                                                 |
+| ---------------- | ----------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| width            | number            | 100%    | The size of carousel(px)                                                                                                                                                                                                                                                                                                                                    |
+| margin           | number            | 0       | Margins between ads(px)                                                                                                                                                                                                                                                                                                                                     |
+| loop             | boolean           | false   | Set to `true` to enable continuous loop mode                                                                                                                                                                                                                                                                                                                |
+| freeMode         | boolean           | false   | Enables free mode functionality. It provides a plain scroll carousel.<br />You can't use `loop`, `navigation`, and `pagination` options in `freeMode`.                                                                                                                                                                                                      |
+| nextMinSlideRate | number            | 0       | If an only one Ad will be shown in the carousel because of the combination of the wrapper size and ad size, JS SDK resize Ads to show two Ads at least. You can specify how percentage of the width of next ads is displayed.                                                                                                                               |
+| responsive       | boolean           | false   | Resize each slide to fit the size of the wrapper of carousel                                                                                                                                                                                                                                                                                                |
+| centering        | boolean           | false   | centralize the first slide and the last slide                                                                                                                                                                                                                                                                                                               |
+| navigation       | boolean \| object | false   | Enables navigation. You can specify some options with object or `true` to enable with default settings.<br /><b>Navigation Options</b><pre>{<br /> color: "#8e24aa", // Color code or name defined in CSS<br /> size: "96px" // Unit define in CSS <br />}</pre>                                                                                            |
+| pagination       | boolean \| object | false   | Enables pagination. You can specify some options with object or `true` to enable with default settings.<br /><b>Pagination Options</b><pre>{ <br /> color: "#8e24aa", // Color code or name defined in CSS<br /> size: "10px", // Size of bullets, default "8px"<br /> position: "outside" // Specify "inside" or "outside", default "inside" <br />}</pre> |
 
 ```html
 <div id="carousel-1">
@@ -521,10 +529,15 @@ You can custom some appearances with the secound argument in `displayInCarousel(
     rdntag.defineAd(2, 'adspot-2').enableSingleRequest();
 
     rdntag.displayInCarousel('carousel-1', {
-      width: 300,
-      interval: 15,
-      nextMinWidth: 30,
+      margin: 15,
+      nextMinSlideRate: 0.1,
+      responsive: true,
+      navigation: true,
+      pagination: {
+        color: '#8e24aa',
+      },
     });
   });
 </script>
 ```
+
