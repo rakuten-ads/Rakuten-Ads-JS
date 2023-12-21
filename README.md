@@ -346,6 +346,27 @@ Example:
 </script>
 ```
 
+### `SetFlexible`
+
+You can use `setFlexible(bool)` to specify if an ad spot flexible or not.
+An ad is resized with the actual size of the content depending on the screen or the parent element, regardless of the size of the adspot.
+
+Example:
+
+```html
+<div id="rdn-adspot-274-58440529"></div>
+<script>
+  var rdntag = rdntag || {};
+  rdntag.cmd = rdntag.cmd || [];
+  rdntag.cmd.push(function () {
+    rdntag
+      .defineAd(274, 'rdn-adspot-274-58440529')
+      .setFlexible(true) /* make the ad flexible */;
+    rdntag.display('rdn-adspot-274-58440529');
+  });
+</script>
+```
+
 ### `Add callback event`
 
 Ad display status can be found by call back event.
