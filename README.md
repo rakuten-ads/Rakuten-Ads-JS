@@ -114,6 +114,8 @@ Example:
 ### `SetIFA`
 
 You can use `setIFA(ifa)` to specify a IFA of a mobile device to send to Ad Server.
+> [!NOTE]  
+> It would only work on iOS and Android device, and the value would be resolved as IDFA or ADID respectively.
 
 Example:
 
