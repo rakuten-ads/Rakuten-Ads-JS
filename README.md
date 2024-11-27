@@ -115,6 +115,9 @@ Example:
 
 You can use `setIFA(ifa)` to specify a IFA of a mobile device to send to Ad Server.
 
+> [!NOTE]  
+> It would only work on iOS and Android device, and the value would be resolved as IDFA or ADID respectively.
+
 Example:
 
 ```html
@@ -216,7 +219,7 @@ Example:
 
 ### `SetResponsive`
 
-You can use `setResponsive(bool)` to specify if an ad spot responsive or not
+You can use `setResponsive(bool)` to specify if an ad spot responsive or not.
 
 Example:
 
@@ -234,7 +237,7 @@ Example:
 </script>
 ```
 
-If you want to adjust padding, padding element should be included in runa tag
+If you want to adjust padding, padding element should be included in runa tag.
 
 ```html
 <div id="rdn-adspot-274-58440529" style="padding:10px 30px;"></div>
@@ -460,7 +463,6 @@ Example:
     rdntag.display('lazy-load-1');
   });
 </script>
-<script src="/dist/aa.js" async></script>
 ```
 
 ## In Single Page Applications
@@ -525,17 +527,17 @@ Because This feature is an extension of Single Request, You need to put `enableS
 
 You can customize some appearances and behaviors with object as the secound argument in `displayInCarousel()`.
 
-| Name             | Type              | Default | Description                                                                                                                                                                                                                                                                                                                                                 |
-| ---------------- | ----------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| width            | number            | 100%    | The size of carousel(px)                                                                                                                                                                                                                                                                                                                                    |
-| margin           | number            | 0       | Margins between ads(px)                                                                                                                                                                                                                                                                                                                                     |
-| loop             | boolean           | false   | Set to `true` to enable continuous loop mode                                                                                                                                                                                                                                                                                                                |
-| freeMode         | boolean           | false   | Enables free mode functionality. It provides a plain scroll carousel.<br />You can't use `loop`, `navigation`, and `pagination` options in `freeMode`.                                                                                                                                                                                                      |
-| nextMinSlideRate | number            | 0       | If an only one Ad will be shown in the carousel because of the combination of the wrapper size and ad size, JS SDK resize Ads to show two Ads at least. You can specify how percentage of the width of next ads is displayed.                                                                                                                               |
-| responsive       | boolean           | false   | Resize each slide to fit the size of the wrapper of carousel                                                                                                                                                                                                                                                                                                |
-| centering        | boolean           | false   | centralize the first slide and the last slide                                                                                                                                                                                                                                                                                                               |
-| navigation       | boolean \| object | false   | Enables navigation. You can specify some options with object or `true` to enable with default settings.<br /><b>Navigation Options</b><pre>{<br /> color: "#8e24aa", // Color code or name defined in CSS<br /> size: "96px" // Unit define in CSS <br />}</pre>                                                                                            |
-| pagination       | boolean \| object | false   | Enables pagination. You can specify some options with object or `true` to enable with default settings.<br /><b>Pagination Options</b><pre>{ <br /> color: "#8e24aa", // Color code or name defined in CSS<br /> size: "10px", // Size of bullets, default "8px"<br /> position: "outside" // Specify "inside" or "outside", default "inside" <br />}</pre> |
+| Name             | Type              | Default | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ---------------- | ----------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| width            | number            | 100%    | The size of carousel(px)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| margin           | number            | 0       | Margins between ads(px)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| loop             | boolean           | false   | Set to `true` to enable continuous loop mode                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| freeMode         | boolean           | false   | Enables free mode functionality. It provides a plain scroll carousel.<br />You can't use `loop`, `navigation`, and `pagination` options in `freeMode`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| nextMinSlideRate | number            | 0       | If an only one Ad will be shown in the carousel because of the combination of the wrapper size and ad size, JS SDK resize Ads to show two Ads at least. You can specify how percentage of the width of next ads is displayed.                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| responsive       | boolean           | false   | Resize each slide to fit the size of the wrapper of carousel                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| centering        | boolean           | false   | centralize the first slide and the last slide                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| navigation       | boolean \| object | false   | Enables navigation. You can specify some options with object or `true` to enable with default settings.<br /><b>Navigation Options</b><pre>{<br /> color: "#8e24aa", // Color code or name defined in CSS<br /> size: "96px" // Unit define in CSS <br /> type: "svg", // The type of arrows. "text" and "svg" are available.<br /> theme: "circle", // The theme of arrows. "shadow" and "circle" are available. This option doesn't work when type is "text". <br /> hoverHighlight: true // Arrows are highlighted when the cursor is hovered on them. This option is available only when you specify hex color for "color" option.<br />}</pre> |
+| pagination       | boolean \| object | false   | Enables pagination. You can specify some options with object or `true` to enable with default settings.<br /><b>Pagination Options</b><pre>{ <br /> color: "#8e24aa", // Color code or name defined in CSS<br /> size: "10px", // Size of bullets, default "8px"<br /> position: "outside" // Specify "inside" or "outside", default "inside" <br />}</pre>                                                                                                                                                                                                                                                                                         |
 
 ```html
 <div id="carousel-1">
@@ -561,4 +563,3 @@ You can customize some appearances and behaviors with object as the secound argu
   });
 </script>
 ```
-
