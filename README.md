@@ -274,26 +274,6 @@ Example:
 </script>
 ```
 
-### `SetIchibaShopUrl`
-
-You can use `setIchibaShopUrl(string)` to specify a Ichiba shop URL to send to Ad Server.
-
-Example:
-
-```html
-<div id="rdn-adspot-274-58440529"></div>
-<script>
-  var rdntag = rdntag || {};
-  rdntag.cmd = rdntag.cmd || [];
-  rdntag.cmd.push(function () {
-    rdntag
-      .defineAd(274, 'rdn-adspot-274-58440529')
-      .setIchibaShopUrl('DUMMY_IchibaShopUrl');
-    rdntag.display('rdn-adspot-274-58440529');
-  });
-</script>
-```
-
 ### `SetRPoint`
 
 You can use `setRPoint(number)` to specify users's rakuten point.
