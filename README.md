@@ -445,6 +445,7 @@ Example:
 ## Lazy Loading
 
 Lazy loading enables pages to load faster, reduces resource consumption and contention, and improves viewability rate by pausing the requesting of ads until they approach the user's viewport.
+Ad will be loaded when users scroll and get to the position where is distance from the specified viewport.
 If it would be used with Single Request, the first ad in the group would be used as a trigger of fetching.
 
 Notes:
