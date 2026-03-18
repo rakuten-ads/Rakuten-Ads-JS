@@ -37,16 +37,20 @@ Displays the loaded interstitial ad in full-screen mode.
 
       rdntag.cmd.push(function () {
         // Define the ad spot
-        rdntag.defineAd(2000, 'adspot-2000');
+        rdntag.defineAd(2000, "adspot-2000");
 
         // Load the interstitial ad
-        rdntag.loadInterstitialAd('adspot-2000');
+        rdntag.loadInterstitialAd("adspot-2000").then(() => {
+          // do something after loading interstitial ad
+
+          rdntag.showInterstitialAd();
+        });
 
         document
-          .getElementById('adspot-2000')
-          .addEventListener('slotResponseReceived', function (e) {
+          .getElementById("adspot-2000")
+          .addEventListener("slotResponseReceived", function (e) {
             if (e && e.detail && e.detail.adReturned) {
-              rdntag.showInterstitialAd();
+              // do something after rendering ad contents
             }
           });
       });
