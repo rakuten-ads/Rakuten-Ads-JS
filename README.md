@@ -26,8 +26,8 @@ Here is the basic format for displaying a simple banner ad.
   var rdntag = rdntag || {};
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
-    rdntag.defineAd({ AD_SPOT_ID }, '{AD_HTML_ELEMENT_ID}');
-    rdntag.display('{AD_HTML_ELEMENT_ID}');
+    rdntag.defineAd({ AD_SPOT_ID }, "{AD_HTML_ELEMENT_ID}");
+    rdntag.display("{AD_HTML_ELEMENT_ID}");
   });
 </script>
 ```
@@ -45,8 +45,8 @@ Example:
   var rdntag = rdntag || {};
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
-    rdntag.defineAd(274, 'rdn-adspot-274-58440529');
-    rdntag.display('rdn-adspot-274-58440529');
+    rdntag.defineAd(274, "rdn-adspot-274-58440529");
+    rdntag.display("rdn-adspot-274-58440529");
   });
 </script>
 ```
@@ -61,8 +61,8 @@ This `code` is used as alternative to adspot and it's converted to adspot at Ad 
   var rdntag = rdntag || {};
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
-    rdntag.defineAdCode({ CODE }, '{AD_HTML_ELEMENT_ID}');
-    rdntag.display('{AD_HTML_ELEMENT_ID}');
+    rdntag.defineAdCode({ CODE }, "{AD_HTML_ELEMENT_ID}");
+    rdntag.display("{AD_HTML_ELEMENT_ID}");
   });
 </script>
 ```
@@ -79,8 +79,8 @@ Example:
   var rdntag = rdntag || {};
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
-    rdntag.defineAdCode('code123', 'rdn-code123-58440529');
-    rdntag.display('rdn-code123-58440529');
+    rdntag.defineAdCode("code123", "rdn-code123-58440529");
+    rdntag.display("rdn-code123-58440529");
   });
 </script>
 ```
@@ -101,12 +101,12 @@ Example:
   var rdntag = rdntag || {};
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
-    rdntag.defineAd(274, 'rdn-adspot-274-58440529').setGenre({
+    rdntag.defineAd(274, "rdn-adspot-274-58440529").setGenre({
       master_id: 1,
-      code: '100371',
-      match: 'children',
+      code: "100371",
+      match: "children",
     });
-    rdntag.display('rdn-adspot-274-58440529');
+    rdntag.display("rdn-adspot-274-58440529");
   });
 </script>
 ```
@@ -114,6 +114,7 @@ Example:
 ### `SetIFA`
 
 You can use `setIFA(ifa)` to specify a IFA of a mobile device to send to Ad Server.
+
 > [!NOTE]  
 > It would only work on iOS and Android device, and the value would be resolved as IDFA or ADID respectively.
 
@@ -128,8 +129,8 @@ Example:
   var rdntag = rdntag || {};
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
-    rdntag.defineAd(274, 'rdn-adspot-274-58440529').setIFA('DUMMY_IFA');
-    rdntag.display('rdn-adspot-274-58440529');
+    rdntag.defineAd(274, "rdn-adspot-274-58440529").setIFA("DUMMY_IFA");
+    rdntag.display("rdn-adspot-274-58440529");
   });
 </script>
 ```
@@ -146,8 +147,8 @@ Example:
   var rdntag = rdntag || {};
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
-    rdntag.defineAd(274, 'rdn-adspot-274-58440529').setRz('DUMMY_RzCookie');
-    rdntag.display('rdn-adspot-274-58440529');
+    rdntag.defineAd(274, "rdn-adspot-274-58440529").setRz("DUMMY_RzCookie");
+    rdntag.display("rdn-adspot-274-58440529");
   });
 </script>
 ```
@@ -167,9 +168,9 @@ Example:
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
     rdntag
-      .defineAd(274, 'rdn-adspot-274-58440529')
-      .setEmail('test@example.com');
-    rdntag.display('rdn-adspot-274-58440529');
+      .defineAd(274, "rdn-adspot-274-58440529")
+      .setEmail("test@example.com");
+    rdntag.display("rdn-adspot-274-58440529");
   });
 </script>
 ```
@@ -188,8 +189,8 @@ Example:
   var rdntag = rdntag || {};
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
-    rdntag.defineAd(274, 'rdn-adspot-274-58440529').setEasyId('DUMMY_EasyID');
-    rdntag.display('rdn-adspot-274-58440529');
+    rdntag.defineAd(274, "rdn-adspot-274-58440529").setEasyId("DUMMY_EasyID");
+    rdntag.display("rdn-adspot-274-58440529");
   });
 </script>
 ```
@@ -211,10 +212,10 @@ Example:
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
     rdntag
-      .defineAd(274, 'rdn-adspot-274-58440529')
-      .setTargeting('k1', 'string type') /* string type */
-      .setTargeting('k2', ['male', 'female']) /* string array */;
-    rdntag.display('rdn-adspot-274-58440529');
+      .defineAd(274, "rdn-adspot-274-58440529")
+      .setTargeting("k1", "string type") /* string type */
+      .setTargeting("k2", ["male", "female"]) /* string array */;
+    rdntag.display("rdn-adspot-274-58440529");
   });
 </script>
 ```
@@ -232,9 +233,9 @@ Example:
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
     rdntag
-      .defineAd(274, 'rdn-adspot-274-58440529')
+      .defineAd(274, "rdn-adspot-274-58440529")
       .setResponsive(true) /* make the ad responsive */;
-    rdntag.display('rdn-adspot-274-58440529');
+    rdntag.display("rdn-adspot-274-58440529");
   });
 </script>
 ```
@@ -261,12 +262,12 @@ Example:
   var rdntag = rdntag || {};
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
-    rdntag.defineAd(274, 'rdn-adspot-274-58440529').setBlockedAdvertiser(badv);
-    rdntag.display('rdn-adspot-274-58440529');
+    rdntag.defineAd(274, "rdn-adspot-274-58440529").setBlockedAdvertiser(badv);
+    rdntag.display("rdn-adspot-274-58440529");
   });
   document
-    .getElementById('rdn-adspot-274-58440529')
-    .addEventListener('slotResponseReceived', function (e) {
+    .getElementById("rdn-adspot-274-58440529")
+    .addEventListener("slotResponseReceived", function (e) {
       if (e && e.detail && e.detail.adReturned && e.detail.advID) {
         badv.push(e.detail.advID);
       }
@@ -287,9 +288,9 @@ Example:
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
     rdntag
-      .defineAd(274, 'rdn-adspot-274-58440529')
-      .setIchibaShopUrl('DUMMY_IchibaShopUrl');
-    rdntag.display('rdn-adspot-274-58440529');
+      .defineAd(274, "rdn-adspot-274-58440529")
+      .setIchibaShopUrl("DUMMY_IchibaShopUrl");
+    rdntag.display("rdn-adspot-274-58440529");
   });
 </script>
 ```
@@ -306,8 +307,8 @@ Example:
   var rdntag = rdntag || {};
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
-    rdntag.defineAd(274, 'rdn-adspot-274-58440529').setRPoint(1234);
-    rdntag.display('rdn-adspot-274-58440529');
+    rdntag.defineAd(274, "rdn-adspot-274-58440529").setRPoint(1234);
+    rdntag.display("rdn-adspot-274-58440529");
   });
 </script>
 ```
@@ -325,8 +326,8 @@ Example:
   var rdntag = rdntag || {};
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
-    rdntag.defineAd(274, 'rdn-adspot-274-58440529').setAdspotBranchId(1);
-    rdntag.display('rdn-adspot-274-58440529');
+    rdntag.defineAd(274, "rdn-adspot-274-58440529").setAdspotBranchId(1);
+    rdntag.display("rdn-adspot-274-58440529");
   });
 </script>
 ```
@@ -345,8 +346,8 @@ Example:
   var rdntag = rdntag || {};
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
-    rdntag.defineAd(274, 'rdn-adspot-274-58440529').setDebug(true);
-    rdntag.display('rdn-adspot-274-58440529');
+    rdntag.defineAd(274, "rdn-adspot-274-58440529").setDebug(true);
+    rdntag.display("rdn-adspot-274-58440529");
   });
 </script>
 ```
@@ -365,9 +366,9 @@ Example:
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
     rdntag
-      .defineAd(274, 'rdn-adspot-274-58440529')
+      .defineAd(274, "rdn-adspot-274-58440529")
       .setFlexible(true) /* make the ad flexible */;
-    rdntag.display('rdn-adspot-274-58440529');
+    rdntag.display("rdn-adspot-274-58440529");
   });
 </script>
 ```
@@ -403,19 +404,19 @@ Example:
   var rdntag = rdntag || {};
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
-    rdntag.defineAd(274, 'rdn-adspot-274-58440529');
-    rdntag.display('rdn-adspot-274-58440529');
+    rdntag.defineAd(274, "rdn-adspot-274-58440529");
+    rdntag.display("rdn-adspot-274-58440529");
   });
   document
-    .getElementById('rdn-adspot-274-58440529')
-    .addEventListener('slotResponseReceived', function (e) {
+    .getElementById("rdn-adspot-274-58440529")
+    .addEventListener("slotResponseReceived", function (e) {
       console.log(
-        'slotResponseReceived event is called:',
+        "slotResponseReceived event is called:",
         e.detail.adReturned,
-        e.detail.status
+        e.detail.status,
       );
       if (e && e.detail && e.detail.adReturned) {
-        console.log('ad is displayed');
+        console.log("ad is displayed");
       }
     });
 </script>
@@ -435,8 +436,8 @@ Example:
   var rdntag = rdntag || {};
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
-    rdntag.defineAd(1, 'adspot-1').enableSingleRequest();
-    rdntag.defineAd(2, 'adspot-2').enableSingleRequest();
+    rdntag.defineAd(1, "adspot-1").enableSingleRequest();
+    rdntag.defineAd(2, "adspot-2").enableSingleRequest();
     rdntag.displayWithSingleRequest();
   });
 </script>
@@ -462,8 +463,8 @@ Example:
   rdntag.cmd.push(function () {
     // Fetches ads within 2 viewports.
     rdntag.enableLazyLoad(200);
-    rdntag.defineAd(1, 'lazy-load-1');
-    rdntag.display('lazy-load-1');
+    rdntag.defineAd(1, "lazy-load-1");
+    rdntag.display("lazy-load-1");
   });
 </script>
 ```
@@ -488,8 +489,8 @@ function ExamplePage() {
   useEffect(() => {
     const { rdntag } = window;
     if (rdntag && Object.keys(rdntag) !== 0) {
-      rdntag.defineAd(1, 'adspot-1');
-      rdntag.display('adspot-1');
+      rdntag.defineAd(1, "adspot-1");
+      rdntag.display("adspot-1");
     }
   }, []);
 
@@ -521,6 +522,12 @@ export default {
 };
 ```
 
+## Full Screen Mode
+
+RUNA provides full-screen advertising mode (interstitial ads) that covers the entire viewport. It is typically used at natural transition points in your application.
+
+For implementation details, see [Interstitial Ads](docs/interstitialAds.md).
+
 ## Carousel Mode
 
 RUNA provides carousel advertising. If ads you defined are in the wrapper the id of which is specified in `displayInCarousel()`, they would be shown carousel ads.
@@ -551,16 +558,16 @@ You can customize some appearances and behaviors with object as the secound argu
   var rdntag = rdntag || {};
   rdntag.cmd = rdntag.cmd || [];
   rdntag.cmd.push(function () {
-    rdntag.defineAd(1, 'adspot-1').enableSingleRequest();
-    rdntag.defineAd(2, 'adspot-2').enableSingleRequest();
+    rdntag.defineAd(1, "adspot-1").enableSingleRequest();
+    rdntag.defineAd(2, "adspot-2").enableSingleRequest();
 
-    rdntag.displayInCarousel('carousel-1', {
+    rdntag.displayInCarousel("carousel-1", {
       margin: 15,
       nextMinSlideRate: 0.1,
       responsive: true,
       navigation: true,
       pagination: {
-        color: '#8e24aa',
+        color: "#8e24aa",
       },
     });
   });

@@ -18,44 +18,101 @@ Loads an interstitial ad. Must be called before showing.
 
 Displays the loaded interstitial ad in full-screen mode.
 
-## Complete Example
+## Example
+
+### Tag
 
 ```html
-<!doctype html>
+<div id="adspot-2000"></div>
+
+<script>
+  var rdntag = rdntag || {};
+  rdntag.cmd = rdntag.cmd || [];
+
+  rdntag.cmd.push(function () {
+    // Define the ad spot
+    rdntag.defineAd(2000, "adspot-2000");
+
+    // Load the interstitial ad
+    rdntag.loadInterstitialAd("adspot-2000").then(() => {
+      // do something after loading interstitial ad
+
+      rdntag.showInterstitialAd();
+    });
+
+    document
+      .getElementById("adspot-2000")
+      .addEventListener("slotResponseReceived", function (e) {
+        if (e && e.detail && e.detail.adReturned) {
+          // do something after rendering ad contents
+        }
+      });
+  });
+</script>
+<script src="https://s-cdn.rmp.rakuten.co.jp/js/aa.js" async></script>
+```
+
+### Creative
+
+```html
 <html>
   <head>
-    <title>Interstitial Ad Example</title>
+    <style>
+      body {
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        height: 100%;
+      }
+      #wrapper {
+        width: 300px;
+        height: 250px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+      }
+      #close_wrapper {
+        width: 100%;
+        height: 32px;
+        display: flex;
+        justify-content: flex-end;
+      }
+      #close_btn {
+        width: 32px;
+        height: 32px;
+        border: 2px solid #333;
+        border-radius: 50%;
+        background: none;
+        font-size: 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 4px 4px 0 0;
+      }
+      #content_wrapper {
+        height: 218px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
   </head>
   <body>
-    <h1>My App</h1>
-    <!-- Ad container (can be empty, as interstitial ads cover the full screen) -->
-    <div id="adspot-2000"></div>
-
+    <div id="wrapper">
+      <div id="close_wrapper">
+        <div id="close_btn">&times;</div>
+      </div>
+      <div id="content_wrapper">AD</div>
+    </div>
     <script>
-      var rdntag = rdntag || {};
-      rdntag.cmd = rdntag.cmd || [];
-
-      rdntag.cmd.push(function () {
-        // Define the ad spot
-        rdntag.defineAd(2000, "adspot-2000");
-
-        // Load the interstitial ad
-        rdntag.loadInterstitialAd("adspot-2000").then(() => {
-          // do something after loading interstitial ad
-
-          rdntag.showInterstitialAd();
-        });
-
-        document
-          .getElementById("adspot-2000")
-          .addEventListener("slotResponseReceived", function (e) {
-            if (e && e.detail && e.detail.adReturned) {
-              // do something after rendering ad contents
-            }
-          });
+      document.getElementById("close_btn").addEventListener("click", (e) => {
+        e.stopPropagation();
+        // Close an intersitial ad by sending the message to JS SDK from a creative
+        window.parent.postMessage({ vendor: "rdn", type: "close" }, "*");
       });
     </script>
-    <script src="https://s-cdn.rmp.rakuten.co.jp/js/aa.js" async></script>
   </body>
 </html>
 ```
